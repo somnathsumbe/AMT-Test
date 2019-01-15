@@ -1,0 +1,82 @@
+<div class="alert alert-success" *ngIf="message">
+  <a href="#" class="close" data-dismiss="alert" (click)="close()">&times;</a>
+  {{message}}
+</div>
+
+<div class="alert alert-danger" *ngIf="error">
+  <a href="#" class="close" data-dismiss="alert" (click)="close()">&times;</a>
+  {{error}}
+</div>
+
+
+
+
+<div class="card">
+    <div class="card-header text-center"><strong>List Data</strong> </div>
+    <div class="card-body">
+
+        <table class="table table-bordered table-sm">
+            <thead class="thead-light">
+              <tr>
+                <th>Task</th>
+                <th>Discription</th>
+                <th>Id</th>
+                <th>Delete</th>
+                <th>Edit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users">
+                <td>{{user.fields.title.stringValue}}</td>
+                <td>{{user.fields.description.stringValue}}</td>
+                <td>{{user.name}}</td>
+                <td class="text-center">
+                  <button type="button" class="btn btn-info" (click)="Edituserdata(user)"><i class="fa fa-edit"></i></button>
+                </td>
+                <td class="text-center">
+                  <button type="button" class="btn btn-danger" (click)="deleteuser(user.name)"><i class="fa fa-trash-o"></i></button>
+                </td>
+              </tr>
+              <tr>
+            </tbody>
+          </table>
+    </div> 
+  </div>
+
+  <button type="button" class="btn btn-light mt-2" routerLink="" routerLinkActive="active"><i class="fa fa-arrow-circle-left"></i>
+    Previous </button>
+
+<!-- The Modal -->
+<div class="modal fade" id="user" *ngIf="student">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">User Data update</h4>
+        <button type="button" class="close" data-dismiss="modal">×</button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form class="form-horizontal" #userform="ngForm" novalidate (ngSubmit)="onSubmit(userform.value)">
+          <div class="form-group">
+            <div class="col-sm-12 p-0">
+              <input type="text" name="title" id="title" class="form-control" #nameref="ngModel" [ngModel]="student.title.stringValue">
+              <input type="hidden" name="id" #idref="ngModel" [ngModel]="student.userid">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-12 p-0">
+              <input type="text" name="description" class="form-control" id="description" placeholder="Enter Discription"
+                #discriptionref="ngModel" [ngModel]="student.description.stringValue">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-12 p-0">
+              <button type="submit" class="btn btn-info">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="mt-3">
+  <span class="text-danger font-weight-bold font-italic ">Show : </span>
+  <div class="form-check-inline">
+    <label class="form-check-label">
+      <input type="radio" class="form-check-input" name="optradio" value="All" [(ngModel)]="selectrediobtnvalue" (change)="onrediontnslectionchanges()">{{"All("+all+")"}}
+    </label>
+  </div>
+  <div class="form-check-inline">
+    <label class="form-check-label">
+      <input type="radio" class="form-check-input" name="optradio" value="Male" [(ngModel)]="selectrediobtnvalue" (change)="onrediontnslectionchanges()">{{"MALE("+ male +")"}}
+    </label>
+  </div>
+  <div class="form-check-inline disabled">
+    <label class="form-check-label">
+      <input type="radio" class="form-check-input" name="optradio" value="Famele" [(ngModel)]="selectrediobtnvalue" (change)="onrediontnslectionchanges()">{{"FEMELE("+ female +")"}}
+    </label>
+  </div>
+</div>
+<br><br>

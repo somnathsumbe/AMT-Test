@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 p-0">
+      <nav class="navbar navbar-expand-sm bg-info navbar-dark">
+        <a class="navbar-brand" href="#">Logo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#" routerLink="" routerLinkActive="active">User Form</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" routerLink="userlist" routerLinkActive="active">User List</a>
+            </li>
+
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="#" routerLink="/emp" routerLinkActive="active">Employee</a>
+              </li>
+
+              <li class="nav-item">
+                  <a class="nav-link" href="#" routerLink="/practice" routerLinkActive="active">Practice</a>
+                </li> -->
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 mt-3">
+        <router-outlet>
+        </router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
